@@ -49,6 +49,18 @@ Part of the versatility of this theme comes from the fact that I included all th
 
 Set `SHOW_ARTICLE_AUTHOR` to True to show the author of the article at the top of the article and in the index of articles. Set `SHOW_ARTICLE_CATEGORY` to show the Category of each article. Set `SHOW_DATE_MODIFIED` to True to show the article modified date next to the published date.
 
+If the source is hosted on GitHub a link to the article history may be included at the bottom of each article by setting the `GITHUB_REPO_URL` variable (see below):
+
+```
+GITHUB_REPO_URL = 'https://github.com/username/repo_name'
+```
+
+A changelog may be included at the bottom of the article by using the metadata keyword `Changelog` of which there may be multiple occurrences. The value for `Changelog` must be formed from a date and description seperated by a colon (see below):
+
+```
+Changelog: 2014-12-17: A description of the change.
+```
+
 ### Custom CSS
 
 If you want to add custom css to the theme, without having to clone and maintain your own version of the theme, you can use the `CUSTOM_CSS` variable. The value is the location where you tell Pelican to put the file (see below):
