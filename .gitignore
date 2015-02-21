@@ -11,3 +11,7 @@ output
 *.ipr
 *.iml
 *.iws
+static/css/fontcustom.css
+static/fonts
+.fontcustom-manifest.json
+

@@ -221,3 +221,16 @@ figure.floatcenter, .align-center {
         font-size: 16px;
     }
 }
+
+i {
+    font-size: 16px;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+
+.fa-lg {
+    font-size: 1.6em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+
