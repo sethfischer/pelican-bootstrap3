@@ -46,7 +46,7 @@ no_hash: true
 # -----------------------------------------------------------------------------
 
 input:
-    vectors: vectors
+    vectors: fontcustom/vectors
 #   templates: my/templates
 
 output:
