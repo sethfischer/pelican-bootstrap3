@@ -56,8 +56,9 @@
     {# Twitter Cards tags #}
     {% include 'includes/twitter_cards.html' %}
 
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/styles.css" type="text/css"/>
-    <link href="{{ SITEURL }}/theme/css/fontcustom.css" rel="stylesheet">
+    {% assets filters="yui_css", output="css/styles.min.css", "css/bootstrap-custom.css", "css/style.css", "css/fontcustom.css" %}
+        <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet" />
+    {% endassets %}
 
     <link href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
     {% if 'tipue_search' in PLUGINS %}
@@ -69,7 +70,6 @@
     {% if TYPOGRIFY %}
         <link href="{{ SITEURL }}/theme/css/typogrify.css" rel="stylesheet">
     {% endif %}
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css"/>
     {% if CUSTOM_CSS %}
         <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet">
     {% endif %}

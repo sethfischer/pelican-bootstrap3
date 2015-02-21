@@ -12,7 +12,7 @@ output
 *.iml
 *.iws
 static/css/fontcustom.css
-static/css/styles.css
+static/css/bootstrap-custom.css
 static/fonts
 .fontcustom-manifest.json
 .sass-cache
