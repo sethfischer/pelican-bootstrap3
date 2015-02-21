@@ -12,6 +12,8 @@ output
 *.iml
 *.iws
 static/css/fontcustom.css
+static/css/styles.css
 static/fonts
 .fontcustom-manifest.json
+.sass-cache
 
