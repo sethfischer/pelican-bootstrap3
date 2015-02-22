@@ -56,7 +56,7 @@
     {# Twitter Cards tags #}
     {% include 'includes/twitter_cards.html' %}
 
-    {% assets filters="yui_css", output="css/styles.min.css", "css/bootstrap-custom.css", "css/style.css", "css/fontcustom.css" %}
+    {% assets filters="yui_css", output="css/styles.%(version)s.min.css", "css/bootstrap-custom.css", "css/style.css", "css/fontcustom.css" %}
         <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet" />
     {% endassets %}
 
@@ -170,7 +170,7 @@
 </div>
 {% include 'includes/footer.html' %}
 
-{% assets filters="yui_js", output="js/scripts.min.js", "js/jquery.min.js", "js/respond.min.js", "js/bootstrap/transition.js", "js/bootstrap/collapse.js", "js/github.js" %}
+{% assets filters="yui_js", output="js/scripts.%(version)s.min.js", "js/jquery.min.js", "js/respond.min.js", "js/bootstrap/transition.js", "js/bootstrap/collapse.js", "js/github.js" %}
     <script src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
 {% endassets %}
 
