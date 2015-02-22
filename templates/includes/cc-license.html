@@ -52,8 +52,8 @@
       {% set cc_title_suffix = cc_title_suffix ~ "-ShareAlike" %}
     {% endif %}
   {% endif %}
-  {% set cc_title, cc_uri, cc_icon = ("Creative Commons Attribution 4.0 InternationalCCSUFFIX License","http://creativecommons.org/licenses/CCNAME/4.0/","//i.creativecommons.org/l/CCNAME/4.0/80x15.png") %}
-  <a rel="license" href="{{ cc_uri|replace('CCNAME',cc_name) }}"><img alt="Creative Commons License" style="border-width:0" src="{{ cc_icon|replace('CCNAME',cc_name) }}" /></a>
+  {% set cc_title, cc_uri = ("Creative Commons Attribution 4.0 InternationalCCSUFFIX License","http://creativecommons.org/licenses/CCNAME/4.0/") %}
+  <a rel="license" href="{{ cc_uri|replace('CCNAME',cc_name) }}"><i class="fa fa-cc-{{ cc_name }} fa-lg" alt="Creative Commons License"></i></a>
   {% if br_after_img %}<br/>{% endif %}
   {% if attr_markup %}
     &quot;<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">{{ attr_props['title'] }}</span>&quot; by <a xmlns:cc="http://creativecommons.org/ns#" href="{{ attr_props['url'] }}" property="cc:attributionName" rel="cc:attributionURL">{{ attr_props['name'] }}</a> is
