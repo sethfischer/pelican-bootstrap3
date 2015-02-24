@@ -170,14 +170,14 @@
 </div>
 {% include 'includes/footer.html' %}
 
-{% assets filters="yui_js", output="js/scripts.%(version)s.min.js", "js/jquery.min.js", "js/bootstrap/transition.js", "js/bootstrap/collapse.js", "js/github.js" %}
+{% assets filters="yui_js", output="js/scripts.%(version)s.min.js", "js/jquery-custom.min.js", "js/bootstrap/transition.js", "js/bootstrap/collapse.js" %}
     <script src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
 {% endassets %}
 
 {% if BANNER %}
     <script src="{{ SITEURL }}/theme/js/bodypadding.js"></script>
 {% endif %}
-{% include 'includes/github-js.html' %}
+
 {% include 'includes/disqus_script.html' %}
 {% include 'includes/ga.html' %}
 {% include 'includes/piwik.html' %}
