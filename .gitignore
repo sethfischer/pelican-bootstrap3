@@ -14,7 +14,7 @@ output
 static/css/fontcustom.css
 static/css/bootstrap-custom.css
 static/js/jquery/*
-static/fonts
+static/font
 .fontcustom-manifest.json
 .sass-cache
 
