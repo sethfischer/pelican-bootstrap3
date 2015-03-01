@@ -11,7 +11,8 @@ output
 *.ipr
 *.iml
 *.iws
-static/css/fontcustom.css
+node_modules
+static/css/font-custom.css
 static/css/bootstrap-custom.css
 static/js/jquery/*
 static/font

@@ -1,0 +1,36 @@
+{
+  "name": "pelican-bootstrap3",
+  "version": "0.1.0",
+  "description": "Bootstrap 3 theme for Pelican",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-webfont": "^0.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sethfischer/pelican-bootstrap3.git"
+  },
+  "author": {
+    "name": "Daan Debie",
+    "url": "https://github.com/DandyDev"
+  },
+  "contributors": [
+    {
+      "name": "The contributors to pelican-bootstrap3",
+      "url": "https://github.com/DandyDev/pelican-bootstrap3"
+    },
+    {
+      "name": "Seth Fischer",
+      "url": "https://github.com/sethfischer"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sethfischer/pelican-bootstrap3/issues"
+  },
+  "homepage": "https://github.com/sethfischer/pelican-bootstrap3"
+}
