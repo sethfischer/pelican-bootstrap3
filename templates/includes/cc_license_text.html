@@ -38,7 +38,7 @@
 
     {% set cc_title = "Creative Commons Attribution 4.0 InternationalCCSUFFIX License" %}
     {% set cc_uri = "http://creativecommons.org/licenses/CCNAME/4.0/" %}
-    <p prefix="dct: http://purl.org/dc/terms/ cc: http://creativecommons.org/ns#">
+    <span prefix="dct: http://purl.org/dc/terms/ cc: http://creativecommons.org/ns#">
         {%- if attr_markup and attr_props.title and attr_props.name -%}
             &quot;<span property="dct:title">{{ attr_props.title }}</span>&quot;
             by <a href="{{ attr_props.url }}" property="cc:attributionName" rel="cc:attributionURL">{{ attr_props.name }}</a> is
@@ -46,5 +46,5 @@
             Content
         {% endif -%}
         licensed under a <a rel="license" href="{{ cc_uri|replace('CCNAME', cc_name) }}">{{ cc_title|replace('CCSUFFIX', cc_title_suffix) }}</a>.
-    </p>
+    </span>
 {% endmacro %}
