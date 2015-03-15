@@ -56,27 +56,6 @@ A changelog may be included at the bottom of the article by using the metadata k
 ```
 Changelog: 2014-12-17: A description of the change.
 ```
-
-### Custom CSS
-
-If you want to add custom css to the theme, without having to clone and maintain your own version of the theme, you can use the `CUSTOM_CSS` variable. The value is the location where you tell Pelican to put the file (see below):
-
-```
-CUSTOM_CSS = 'static/custom.css'
-```
-
-To tell Pelican to copy the relevant file to the desired destination, add the path to `STATIC_PATHS` and the destination to `EXTRA_PATH_METADATA`, like so:
-
-```
-# Tell Pelican to add 'extra/custom.css' to the output dir
-STATIC_PATHS = ['images', 'extra/custom.css']
-
-# Tell Pelican to change the path to 'static/custom.css' in the output dir
-EXTRA_PATH_METADATA = {
-    'extra/custom.css': {'path': 'static/custom.css'}
-}
-```
-
 ### Pygments
 
 You can choose the syntax highlighting style by using the `PYGMENTS_STYLE` variable to specify one of the built-in Pygments styles. By default the `native` style is used. The following styles are avaiable:

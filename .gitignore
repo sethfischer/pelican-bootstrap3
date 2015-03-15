@@ -12,10 +12,11 @@ output
 *.iml
 *.iws
 node_modules
-static/css/font-custom.css
 static/css/bootstrap-custom.css
-static/js/jquery/*
+static/css/font-custom.css
+static/css/github-repos.css
 static/font
+static/js/jquery/*
 .fontcustom-manifest.json
 .sass-cache
 
