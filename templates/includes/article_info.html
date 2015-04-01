@@ -38,7 +38,7 @@
                 <div class="btn-group btn-group-xs" role="group" aria-label="...">
                     <a class="btn btn-default btn-sm" href="{{ GITHUB_REPO_URL }}/commits/source/content/{{ article.get_relative_source_path() }}" role="button"><i class="fa fa-history"></i> History</a>
                     <a class="btn btn-default btn-sm" href="{{ GITHUB_REPO_URL }}" role="button"><i class="fa fa-eye"></i> Watch</a>
-                    <a class="btn btn-default btn-sm" href="{{ GITHUB_REPO_URL }}/issues/new?title={{ article.get_relative_source_path() | urlencode }}" role="button"><i class="fa fa-history"></i> New issue</a>
+                    <a class="btn btn-default btn-sm" href="{{ GITHUB_REPO_URL }}/issues/new?title={{ article.get_relative_source_path() | urlencode }}" role="button"><i class="fa fa-exclamation"></i> New issue</a>
                 </div>
             </dd>
         {% endif %}
