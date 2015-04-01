@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
     "use strict";
 
+    require('load-grunt-tasks')(grunt);
+
     grunt.initConfig({
         compass: {
             dist: {
@@ -9,29 +11,15 @@ module.exports = function(grunt) {
                 }
             }
         },
-        webfont: {
-            icons: {
-                src: 'fontcustom/vectors/*.svg',
-                dest: 'static/font',
-                destCss: 'static/css',
-                options: {
-                    htmlDemo: false,
-                    hashes: false,
-                    font: 'font-custom',
-                    types: 'eot,woff,svg,ttf',
-                    syntax: 'bem',
-                    templateOptions: {
-                        baseClass: 'fa',
-                        classPrefix: 'fa-'
-                    }
-                }
+        shell: {
+            fontcustom: {
+                command: 'fontcustom  compile --config=fontcustom.yml --force'
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-webfont');
 
-    grunt.registerTask("default", ["compass", "webfont"]);
+    grunt.registerTask("default", ["compass", "shell:fontcustom"]);
 };
 
