@@ -1,35 +1,55 @@
 <footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
-    </span>
-    {% if SHOW_DATE_MODIFIED %}
-        {% if article.modified %}
-            <span class="label label-default">Modified</span>
-            <span class="modified">
-                <i class="fa fa-calendar"></i><time datetime="{{ article.modified.isoformat() }}"> {{ article.locale_modified }}</time>
-            </span>
+    <dl class="dl-horizontal">
+        <dt>Date</dt>
+        <dd>
+            <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+            {% if SHOW_DATE_MODIFIED %}
+                {% if article.modified %}
+                <small>(Modified <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>)</small>
+                {% endif %}
+            {% endif %}
+        </dd>
+        {% if SHOW_ARTICLE_AUTHOR %}
+            {% if article.authors %}
+                <dt>Author</dt>
+                {% for author in article.authors %}
+                    <dd><a href="{{ SITEURL }}/{{ author.url }}">{{ author.name }}</a></dd>
+                {% endfor %}
+            {% endif %}
         {% endif %}
-    {% endif %}
-    {% if SHOW_ARTICLE_AUTHOR %}
-        {% if article.author %}
-            <span class="label label-default">By</span>
-            <a href="{{ SITEURL }}/{{ article.author.url }}"><i class="fa fa-user"></i> {{ article.author }}</a>
+        {% if SHOW_ARTICLE_CATEGORY %}
+            <dt>Category</dt>
+            <dd><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></dd>
         {% endif %}
-    {% endif %}
-
-    {% if SHOW_ARTICLE_CATEGORY %}
-        <span class="label label-default">Category</span>
-        <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-    {% endif %}
+        {% if article.tags %}
+            <dt>Tags</dt>
+            <dd>
+            {% for tag in article.tags %}
+                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                {% if not loop.last %}
+                    /
+                {% endif %}
+            {% endfor %}
+            </dd>
+        {% endif %}
+        {% if GITHUB_REPO_URL %}
+            <dt>On GitHub</dt>
+            <dd>
+                <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                    <a class="btn btn-default btn-sm" href="{{ GITHUB_REPO_URL }}/commits/source/content/{{ article.get_relative_source_path() }}" role="button"><i class="fa fa-history"></i> History</a>
+                    <a class="btn btn-default btn-sm" href="{{ GITHUB_REPO_URL }}" role="button"><i class="fa fa-eye"></i> Watch</a>
+                    <a class="btn btn-default btn-sm" href="{{ GITHUB_REPO_URL }}/issues/new?title={{ article.get_relative_source_path() | urlencode }}" role="button"><i class="fa fa-history"></i> New issue</a>
+                </div>
+            </dd>
+        {% endif %}
+    </dl>
 
     {% if PDF_PROCESSOR %}
-        <span class="label label-default">
-            <a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">PDF</a>
-        </span>
+        <p class="text-right">
+            <a class="btn btn-default btn-sm" href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf" role="button">PDF</a>
+        </p>
     {% endif %}
 
-    {% include 'includes/taglist.html' %}
     {% import 'includes/translations.html' as translations with context %}
     {{ translations.translations_for(article) }}
 </footer><!-- /.post-info -->

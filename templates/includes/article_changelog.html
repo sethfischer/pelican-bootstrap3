@@ -1,16 +1,5 @@
-{% if GITHUB_REPO_URL or article.changelog %}
-    <h2>Changelog</h2>
-{% endif %}
-
-{% if GITHUB_REPO_URL %}
-    <p>
-        <a href="{{ GITHUB_REPO_URL }}/commits/source/content/{{ article.get_relative_source_path() }}">
-            View history on GitHub
-        </a>
-    </p>
-{% endif %}
-
 {% if article.changelog %}
+    <h2>Changelog</h2>
     <div class="panel-group" role="tablist">
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="collapse-changelog-heading-1">
