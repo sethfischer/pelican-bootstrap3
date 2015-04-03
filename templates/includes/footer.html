@@ -1,25 +1,19 @@
-<footer>
-   <div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
-      <hr>
-      <div class="row">
-         {% if articles %}
-            {% set copy_date = articles[0].date.strftime('%Y') %}
-         {% else %}
-            {% set copy_date = '' %}
-         {% endif %}
-         {% set attr_props = {} %}
-         {% if article %}
-            {% set attr_props = {'title':article.title,'name':article.author if article else AUTHOR,'url':SITEURL} %}
-         {% endif %}
-         <div class="col-xs-10">
-            <p>&copy; {{ copy_date }} {{ AUTHOR }}
-            {%- if CC_LICENSE_DERIVATIVES or CC_LICENSE_COMMERCIAL %}
-              {% from 'includes/cc_license_text.html' import cc_license_text %}
-              {{ cc_license_text(derivatives=CC_LICENSE_DERIVATIVES,commercial=CC_LICENSE_COMMERCIAL,attr_markup=CC_ATTR_MARKUP,attr_props=attr_props) }}
-            {% endif %}
-             </p>
-         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
-      </div>
-   </div>
+{% if articles %}
+    {% set copy_date = articles[0].date.strftime('%Y') %}
+{% else %}
+    {% set copy_date = '' %}
+{% endif %}
+{% set attr_props = {} %}
+{% if article %}
+    {% set attr_props = {'title':article.title,'name':article.author if article else AUTHOR,'url':SITEURL} %}
+{% endif %}
+<footer class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
+    <hr>
+    <p>
+        &copy; {{ copy_date }} {{ AUTHOR }}
+        {%- if CC_LICENSE_DERIVATIVES or CC_LICENSE_COMMERCIAL %}
+            {% from 'includes/cc_license_text.html' import cc_license_text %}
+            {{ cc_license_text(derivatives=CC_LICENSE_DERIVATIVES,commercial=CC_LICENSE_COMMERCIAL,attr_markup=CC_ATTR_MARKUP,attr_props=attr_props) }}
+        {% endif %}
+    </p>
 </footer>
