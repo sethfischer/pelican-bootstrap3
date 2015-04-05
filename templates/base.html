@@ -53,7 +53,7 @@
     {# Twitter Cards tags #}
     {% include 'includes/twitter_cards.html' %}
 
-    {% assets filters="yui_css", output="css/styles.%(version)s.min.css", "css/bootstrap-custom.css", "css/font-custom.css", "css/github-repos.css", "css/style.css", "pygments" %}
+    {% assets filters="yui_css", output="css/styles.%(version)s.min.css", "css/bootstrap-custom.css", "css/font-custom.css", "css/sidebar.css", "css/style.css", "pygments" %}
         <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet" />
     {% endassets %}
 
@@ -120,7 +120,7 @@
                 </form></span>
               </li>
             {% endif %}
-              <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i> Archives</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -147,16 +147,14 @@
         {% endblock %}
         </div>
         {% if not HIDE_SIDEBAR or ABOUT_ME %}
-        <div class="col-sm-3" id="sidebar">
-            <aside>
+        <aside class="col-sm-3" id="sidebar">
             {% if ABOUT_ME %}
                 {% include 'includes/aboutme.html' %}
             {% endif %}
             {% if not HIDE_SIDEBAR %}
                 {% include 'includes/sidebar.html' %}
             {% endif %}
-            </aside>
-        </div>
+        </aside>
         {% endif %}
     </div>
 </div>

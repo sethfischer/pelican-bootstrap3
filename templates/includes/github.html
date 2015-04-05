@@ -1,27 +1,25 @@
 {% if GITHUB_USER %}
-    <li class="list-group-item">
-        <h4>
-            <i class="fa fa-github fa-lg"></i>
-            <span class="icon-label">GitHub repos</span>
-        </h4>
-        <div id="gh_repos">
-            <ul class="list-group" id="github">
-                {% for project in github_projects %}
-                    <li class="list-group-item">
-                        <h5>
-                            <a href="{{ project.github_url }}">{{ project.name }}</a>
-                            {% if project.language %}
-                                <small>{{ project.language }}</small>
-                            {% endif %}
-                        </h5>
-                        <p><small>{{ project.description }}</small></p>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% if GITHUB_SHOW_USER_LINK is defined %}
-            <a href="https://github.com/{{ GITHUB_USER }}">@{{ GITHUB_USER }}</a> on GitHub
-        {% endif %}
-    </li>
-{% endif %}
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="sidebar-heading"><i class="fa fa-github fa-lg"></i> GitHub repositories</span>
 
+            <dl id="github-repos">
+                {% for project in github_projects %}
+                    <dt>
+                        <a href="{{ project.github_url }}">{{ project.name }}</a>
+                        {% if project.language %}
+                            <small>{{ project.language }}</small>
+                        {% endif %}
+                    </dt>
+                    <dd>
+                        <small>{{ project.description }}</small>
+                    </dd>
+                {% endfor %}
+            </dl>
+
+            {% if GITHUB_SHOW_USER_LINK is defined %}
+                <a href="https://github.com/{{ GITHUB_USER }}">@{{ GITHUB_USER }}</a> on GitHub
+            {% endif %}
+        </li>
+    </ul>
+{% endif %}

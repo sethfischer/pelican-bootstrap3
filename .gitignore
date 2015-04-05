@@ -14,7 +14,7 @@ output
 node_modules
 static/css/bootstrap-custom.css
 static/css/font-custom.css
-static/css/github-repos.css
+static/css/sidebar.css
 static/font
 static/js/jquery/*
 .fontcustom-manifest.json
