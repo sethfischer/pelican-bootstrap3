@@ -7,7 +7,7 @@
 {% if article %}
     {% set attr_props = {'title':article.title,'name':article.author if article else AUTHOR,'url':SITEURL} %}
 {% endif %}
-<footer class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
+<footer class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}" role="contentinfo">
     <hr>
     <p>
         &copy; {{ copy_date }} {{ AUTHOR }}
