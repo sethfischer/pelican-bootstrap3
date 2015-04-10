@@ -6,10 +6,13 @@
 {% endblock %}
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
-    <ol class="breadcrumb">
-        <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
-        <li><a href="{{ SITEURL }}/{{ TAGS_URL }}" title="Tags">Tags</a></li>
-        <li class="active">{{ tag }}</li>
-    </ol>
+        <nav role="navigation">
+            <p id="breadcrumblabel" class="sr-only">You are here:</p>
+            <ol class="breadcrumb" aria-labelledby="breadcrumblabel">
+                <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
+                <li><a href="{{ SITEURL }}/{{ TAGS_URL }}" title="Tags">Tags</a></li>
+                <li class="active">{{ tag }}</li>
+            </ol>
+        </nav>
     {% endif %}
 {% endblock %}

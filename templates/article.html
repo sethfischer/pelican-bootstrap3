@@ -52,18 +52,21 @@
 
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
-        {% if DISPLAY_CATEGORY_IN_BREADCRUMBS %}
-            <ol class="breadcrumb">
-                <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category }}">{{ article.category }}</a></li>
-                <li class="active">{{ article.title }}</li>
-            </ol>
-        {% else %}
-            <ol class="breadcrumb">
-                <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
-                <li class="active">{{ article.title }}</li>
-            </ol>
-        {% endif %}
+        <nav role="navigation">
+            <p id="breadcrumblabel" class="sr-only">You are here:</p>
+            {% if DISPLAY_CATEGORY_IN_BREADCRUMBS %}
+                <ol class="breadcrumb" aria-labelledby="breadcrumblabel">
+                    <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
+                    <li><a href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category }}">{{ article.category }}</a></li>
+                    <li class="active">{{ article.title }}</li>
+                </ol>
+            {% else %}
+                <ol class="breadcrumb" aria-labelledby="breadcrumblabel">
+                    <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
+                    <li class="active">{{ article.title }}</li>
+                </ol>
+            {% endif %}
+        </nav>
     {% endif %}
 {% endblock %}
 
