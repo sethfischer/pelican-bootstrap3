@@ -135,19 +135,14 @@
 <!-- End Banner -->
 <div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
     <div class="row">
+        <main id="main" class="{% if not HIDE_SIDEBAR or ABOUT_ME %}col-sm-9{% else %}col-lg-12{% endif %}" role="main">
+            {% block breadcrumbs %}
+            {% endblock %}
+            {% block content %}
+            {% endblock %}
+        </main>
         {% if not HIDE_SIDEBAR or ABOUT_ME %}
-        <div class="col-sm-9">
-        {% else %}
-        <div class="col-lg-12">
-        {% endif %}
-        {% block breadcrumbs %}
-        {% endblock %}
-
-        {% block content %}
-        {% endblock %}
-        </div>
-        {% if not HIDE_SIDEBAR or ABOUT_ME %}
-        <aside class="col-sm-3" id="sidebar">
+        <aside  id="sidebar" class="col-sm-3" role="complementary">
             {% if ABOUT_ME %}
                 {% include 'includes/aboutme.html' %}
             {% endif %}
