@@ -53,19 +53,10 @@
     {# Twitter Cards tags #}
     {% include 'includes/twitter_cards.html' %}
 
-    {% assets filters="yui_css", output="css/styles.%(version)s.min.css", "css/bootstrap-custom.css", "css/font-custom.css", "css/sidebar.css", "css/style.css", "pygments" %}
+    {% assets filters="yui_css", output="css/styles.%(version)s.min.css", "css_bundle" %}
         <link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet" />
     {% endassets %}
 
-    {% if 'tipue_search' in PLUGINS %}
-    <link href="{{ SITEURL}}/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    {% endif %}
-    {% if DOCUTIL_CSS %}
-        <link href="{{ SITEURL }}/theme/css/html4css1.css" rel="stylesheet">
-    {% endif %}
-    {% if TYPOGRIFY %}
-        <link href="{{ SITEURL }}/theme/css/typogrify.css" rel="stylesheet">
-    {% endif %}
     {% if FEED_ALL_ATOM %}
         <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
               title="{{ SITENAME }} ATOM Feed"/>
@@ -155,7 +146,7 @@
 </div>
 {% include 'includes/footer.html' %}
 
-{% assets filters="yui_js", output="js/scripts.%(version)s.min.js", "js/jquery/jquery-custom.min.js", "js/bootstrap/transition.js", "js/bootstrap/collapse.js" %}
+{% assets filters="yui_js", output="js/scripts.%(version)s.min.js", 'js_bundle' %}
     <script src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
 {% endassets %}
 
