@@ -1,33 +1,30 @@
 {% if article.changelog %}
     <section>
-        <h2>Changelog</h2>
         <div class="panel-group" role="tablist">
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="collapse-changelog-heading-1">
-                    <h3 class="panel-title">
+                    <h2 class="panel-title">
                         <a class="changelog-heading" data-toggle="collapse" href="#collapse-changelog" aria-controls="collapse-changelog">
-                            Changes
+                            Changelog
                         </a>
-                        <span class="badge">
-                            {% if article.changelog is string %}
-                                1
-                            {% else %}
-                                {{ article.changelog | length }}
-                            {% endif %}
-                        </span>
-                    </h3>
+                        {% if article.changelog is string %}
+                            <span class="badge">1</span> <span class="sr-only">entry</span>
+                        {% else %}
+                            <span class="badge">{{ article.changelog | length }}</span> <span class="sr-only">entries</span>
+                        {% endif %}
+                    </h2>
                 </div>
                 <div id="collapse-changelog" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapse-changelog-heading-1">
-                    <dl class="list-group dl-horizontal">
+                    <dl class="dl-horizontal">
                         {% if article.changelog is string %}
-                            {% set date, description = article.changelog.split(':', 2) %}
-                            <dt class="list-group-item">{{ date }}</dt>
-                            <dd class="list-group-item">{{ description }}</dd>
+                            {% set date, description = article.changelog.split(': ', 2) %}
+                            <dt>{{ date }}</dt>
+                            <dd>{{ description }}</dd>
                         {% else %}
                             {% for log_entry in article.changelog %}
                                 {% set date, description = log_entry.split(': ', 2) %}
-                                <dt class="list-group-item">{{ date }}</dt>
-                                <dd class="list-group-item">{{ description }}</dd>
+                                <dt>{{ date }}</dt>
+                                <dd>{{ description }}</dd>
                             {% endfor %}
                         {% endif %}
                     </dl>
