@@ -71,23 +71,20 @@
 {% endblock %}
 
 {% block content %}
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>{{ article.title }}</h1>
-            </header>
-            {% include "includes/article_info.html" %}
-            <div class="entry-content">
-                {{ article.content }}
-            </div>
-            <!-- /.entry-content -->
-            {% include 'includes/article_changelog.html' %}
-            {% include 'includes/related-posts.html' %}
-            {% include 'includes/addthis.html' %}
-            {% include 'includes/comments.html' %}
-        </article>
-    </section>
-
+    <article id="content">
+        <header class="page-header">
+            <h1>{{ article.title }}</h1>
+        </header>
+        {% include "includes/article_info.html" %}
+        <div class="entry-content">
+            {{ article.content }}
+        </div>
+        <!-- /.entry-content -->
+        {% include 'includes/article_changelog.html' %}
+        {% include 'includes/related-posts.html' %}
+        {% include 'includes/addthis.html' %}
+        {% include 'includes/comments.html' %}
+    </article>
 {% endblock %}
 
 {% block scripts %}

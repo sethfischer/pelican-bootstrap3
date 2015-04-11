@@ -2,93 +2,92 @@
     {% set DISPLAY_TAGS_ON_SIDEBAR = True %}
 {% endif %}
 
-<section class="well well-sm">
-    <h2 class="sr-only">Miscellaneous links and navigation</h2>
-    {% if SOCIAL %}
-        <ul class="list-group">
-            <li class="list-group-item">
-                <span class="sidebar-heading"><i class="fa fa-code-fork fa-lg"></i> Code</span>
-                <ul class="list-group" id="social">
-                    {% for name, link in SOCIAL %}
-                        {% set name_sanitized = name|lower|replace('+','-plus')|replace(' ','-') %}
-                        {% set iconattributes = '"fa fa-' ~ name_sanitized ~ ' fa-lg"' %}
-                        <li class="list-group-item"><a href="{{ link }}"><i class={{ iconattributes }}></i> {{ name }}</a></li>
-                    {% endfor %}
-                </ul>
-            </li>
-        </ul>
-    {% endif %}
+<h2 class="sr-only">Miscellaneous links and navigation</h2>
 
-    {% if DISPLAY_RECENT_POSTS_ON_SIDEBAR %}
-        {% if RECENT_POST_COUNT is not defined %}
-            {% set RECENT_POST_COUNT = 5 %}
-        {% endif %}
-        <ul class="list-group">
-            <li class="list-group-item">
-                <span class="sidebar-heading"><i class="fa fa-clock-o fa-lg"></i> Recent articles</span>
-                <nav>
-                    <ul class="list-group" id="recentposts">
-                    {% for article in articles[:RECENT_POST_COUNT] %}
+{% if SOCIAL %}
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="sidebar-heading"><i class="fa fa-code-fork fa-lg"></i> Code</span>
+            <ul class="list-group" id="social">
+                {% for name, link in SOCIAL %}
+                    {% set name_sanitized = name|lower|replace('+','-plus')|replace(' ','-') %}
+                    {% set iconattributes = '"fa fa-' ~ name_sanitized ~ ' fa-lg"' %}
+                    <li class="list-group-item"><a href="{{ link }}"><i class={{ iconattributes }}></i> {{ name }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+{% endif %}
+
+{% if DISPLAY_RECENT_POSTS_ON_SIDEBAR %}
+    {% if RECENT_POST_COUNT is not defined %}
+        {% set RECENT_POST_COUNT = 5 %}
+    {% endif %}
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="sidebar-heading"><i class="fa fa-clock-o fa-lg"></i> Recent articles</span>
+            <nav>
+                <ul class="list-group" id="recentposts">
+                {% for article in articles[:RECENT_POST_COUNT] %}
+                    <li class="list-group-item">
+                        <a href="{{ SITEURL }}/{{ article.url }}">
+                            {{ article.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </nav>
+        </li>
+    </ul>
+{% endif %}
+
+{% if DISPLAY_CATEGORIES_ON_SIDEBAR %}
+    <ul class="list-group">
+        <li class="list-group-item">
+            {% if CATEGORIES_URL %}<a href="{{ SITEURL }}/{{ CATEGORIES_URL }}">{% endif %}
+            <span class="sidebar-heading"><i class="fa fa-home fa-lg"></i> Categories</span>
+            {% if CATEGORIES_URL %}</a>{% endif %}
+            <nav>
+                <ul class="list-group" id="categories">
+                    {% for cat, null in categories %}
                         <li class="list-group-item">
-                            <a href="{{ SITEURL }}/{{ article.url }}">
-                                {{ article.title }}
+                            <a href="{{ SITEURL }}/{{ cat.url }}">
+                                <i class="fa fa-folder-open fa-lg"></i> {{ cat }}
                             </a>
                         </li>
                     {% endfor %}
-                    </ul>
-                </nav>
-            </li>
-        </ul>
-    {% endif %}
+                </ul>
+            </nav>
+        </li>
+    </ul>
+{% endif %}
 
-    {% if DISPLAY_CATEGORIES_ON_SIDEBAR %}
-        <ul class="list-group">
-            <li class="list-group-item">
-                {% if CATEGORIES_URL %}<a href="{{ SITEURL }}/{{ CATEGORIES_URL }}">{% endif %}
-                <span class="sidebar-heading"><i class="fa fa-home fa-lg"></i> Categories</span>
-                {% if CATEGORIES_URL %}</a>{% endif %}
-                <nav>
-                    <ul class="list-group" id="categories">
-                        {% for cat, null in categories %}
-                            <li class="list-group-item">
-                                <a href="{{ SITEURL }}/{{ cat.url }}">
-                                    <i class="fa fa-folder-open fa-lg"></i> {{ cat }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </nav>
-            </li>
-        </ul>
+{% if DISPLAY_TAGS_ON_SIDEBAR %}
+    {% if DISPLAY_TAGS_INLINE %}
+        {% set tags = tag_cloud | sort(attribute='0') %}
+    {% else %}
+        {% set tags = tag_cloud | sort(attribute='1') %}
     {% endif %}
+    <ul class="list-group">
+        <li class="list-group-item">
+            {% if TAGS_URL %}<a href="{{ SITEURL }}/{{ TAGS_URL }}">{% endif %}
+            <span class="sidebar-heading"><i class="fa fa-tags fa-lg"></i> Tags</span>
+            {% if TAGS_URL %}</a>{% endif %}
+            <nav>
+                <ul class="list-group{% if DISPLAY_TAGS_INLINE %} list-inline tagcloud{% endif %}" id="tags">
+                    {% for tag in tags %}
+                        <li class="list-group-item tag-{{ tag.1 }}">
+                            <a href="{{ SITEURL }}/{{ tag.0.url }}">
+                                {{ tag.0 }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </li>
+    </ul>
+{% endif %}
 
-    {% if DISPLAY_TAGS_ON_SIDEBAR %}
-        {% if DISPLAY_TAGS_INLINE %}
-            {% set tags = tag_cloud | sort(attribute='0') %}
-        {% else %}
-            {% set tags = tag_cloud | sort(attribute='1') %}
-        {% endif %}
-        <ul class="list-group">
-            <li class="list-group-item">
-                {% if TAGS_URL %}<a href="{{ SITEURL }}/{{ TAGS_URL }}">{% endif %}
-                <span class="sidebar-heading"><i class="fa fa-tags fa-lg"></i> Tags</span>
-                {% if TAGS_URL %}</a>{% endif %}
-                <nav>
-                    <ul class="list-group{% if DISPLAY_TAGS_INLINE %} list-inline tagcloud{% endif %}" id="tags">
-                        {% for tag in tags %}
-                            <li class="list-group-item tag-{{ tag.1 }}">
-                                <a href="{{ SITEURL }}/{{ tag.0.url }}">
-                                    {{ tag.0 }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </nav>
-            </li>
-        </ul>
-    {% endif %}
-
-    {% include 'includes/github.html' %}
-    {% include 'includes/twitter_timeline.html' %}
-    {% include 'includes/links.html' %}
-</section>
+{% include 'includes/github.html' %}
+{% include 'includes/twitter_timeline.html' %}
+{% include 'includes/links.html' %}

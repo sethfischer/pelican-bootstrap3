@@ -142,14 +142,14 @@
             {% endblock %}
         </main>
         {% if not HIDE_SIDEBAR or ABOUT_ME %}
-        <aside  id="sidebar" class="col-sm-3" role="complementary">
-            {% if ABOUT_ME %}
-                {% include 'includes/aboutme.html' %}
-            {% endif %}
-            {% if not HIDE_SIDEBAR %}
-                {% include 'includes/sidebar.html' %}
-            {% endif %}
-        </aside>
+            <aside  id="sidebar" class="col-sm-3 well well-sm"role="complementary">
+                {% if ABOUT_ME %}
+                    {% include 'includes/aboutme.html' %}
+                {% endif %}
+                {% if not HIDE_SIDEBAR %}
+                    {% include 'includes/sidebar.html' %}
+                {% endif %}
+            </aside>
         {% endif %}
     </div>
 </div>
