@@ -12,9 +12,7 @@ output
 *.iml
 *.iws
 node_modules
-static/css/bootstrap-custom.css
-static/css/font-custom.css
-static/css/sidebar.css
+static/css
 static/font
 static/js/jquery/*
 .fontcustom-manifest.json
