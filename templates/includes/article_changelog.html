@@ -1,37 +1,39 @@
 {% if article.changelog %}
-    <h2>Changelog</h2>
-    <div class="panel-group" role="tablist">
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="collapse-changelog-heading-1">
-                <h3 class="panel-title">
-                    <a class="changelog-heading" data-toggle="collapse" href="#collapse-changelog" aria-controls="collapse-changelog">
-                        Changes
-                    </a>
-                    <span class="badge">
+    <section>
+        <h2>Changelog</h2>
+        <div class="panel-group" role="tablist">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="collapse-changelog-heading-1">
+                    <h3 class="panel-title">
+                        <a class="changelog-heading" data-toggle="collapse" href="#collapse-changelog" aria-controls="collapse-changelog">
+                            Changes
+                        </a>
+                        <span class="badge">
+                            {% if article.changelog is string %}
+                                1
+                            {% else %}
+                                {{ article.changelog | length }}
+                            {% endif %}
+                        </span>
+                    </h3>
+                </div>
+                <div id="collapse-changelog" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapse-changelog-heading-1">
+                    <dl class="list-group dl-horizontal">
                         {% if article.changelog is string %}
-                            1
-                        {% else %}
-                            {{ article.changelog | length }}
-                        {% endif %}
-                    </span>
-                </h3>
-            </div>
-            <div id="collapse-changelog" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapse-changelog-heading-1">
-                <dl class="list-group dl-horizontal">
-                    {% if article.changelog is string %}
-                        {% set date, description = article.changelog.split(':', 2) %}
-                        <dt class="list-group-item">{{ date }}</dt>
-                        <dd class="list-group-item">{{ description }}</dd>
-                    {% else %}
-                        {% for log_entry in article.changelog %}
-                            {% set date, description = log_entry.split(': ', 2) %}
+                            {% set date, description = article.changelog.split(':', 2) %}
                             <dt class="list-group-item">{{ date }}</dt>
                             <dd class="list-group-item">{{ description }}</dd>
-                        {% endfor %}
-                    {% endif %}
-                </dl>
+                        {% else %}
+                            {% for log_entry in article.changelog %}
+                                {% set date, description = log_entry.split(': ', 2) %}
+                                <dt class="list-group-item">{{ date }}</dt>
+                                <dd class="list-group-item">{{ description }}</dd>
+                            {% endfor %}
+                        {% endif %}
+                    </dl>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 {% endif %}
 
