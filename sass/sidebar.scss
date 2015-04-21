@@ -1,5 +1,5 @@
 #sidebar {
-    padding-top: 0px;
+    padding-top: 0;
     word-break: break-all;
     word-break: break-word;
     hyphens: auto;
@@ -18,15 +18,15 @@
     }
 
     .list-group-item > .list-group {
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 
     .list-group-item .list-group-item:last-child {
-        padding-bottom: 0px;
+        padding-bottom: 0;
     }
 
     .tagcloud li {
-        padding: 0px;
+        padding: 0;
     }
 
     #tags {

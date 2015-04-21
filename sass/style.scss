@@ -3,13 +3,14 @@ body {
 }
 
 #aboutme {
-    padding-top: 0px;
+    padding-top: 0;
     padding-bottom: 5px;
     -ms-word-break: normal;
     word-break: normal;
 }
 
-a, a:hover {
+a,
+a:hover {
     color: inherit;
 }
 
@@ -28,7 +29,8 @@ a, a:hover {
     height: auto;
 }
 
-.entry-content figcaption, .caption {
+.entry-content figcaption,
+.caption {
     font-size: small;
     margin-bottom: 2px;
 }
@@ -39,35 +41,41 @@ a, a:hover {
 }
 
 
-.floatright, .align-right {
+.floatright,
+.align-right {
     float: right;
 }
 
-.floatleft, .align-left {
+.floatleft,
+.align-left {
     float: left;
 }
 
-.floatcenter, .align-center {
+.floatcenter,
+.align-center {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-figure.floatright, .align-right {
+figure.floatright,
+.align-right {
     margin-left: 4px;
 }
 
-figure.floatleft, .align-left {
+figure.floatleft,
+.align-left {
     margin-right: 4px;
 }
 
-figure.floatcenter, .align-center {
+figure.floatcenter,
+.align-center {
     margin-bottom: 11px;
 }
 
 .highlighttable pre {
     /* Removes bootstrap default margin-bottom */
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .highlighttable {
@@ -91,7 +99,7 @@ figure.floatcenter, .align-center {
 }
 
 .categories-timestamp {
-    color: #AAAAAA;
+    color: #aaaaaa;
     font-size: 0.9em;
     margin-right: 10px;
 }
@@ -101,7 +109,7 @@ figure.floatcenter, .align-center {
     background-position: top center;
     background-attachment: scroll;
     background-size: cover;
-    background-color: #C4C4C4;
+    background-color: #c4c4c4;
     margin: 0 0 20px;
     padding: 70px 0; /*controls padding around inner text*/
     position: relative;
@@ -118,7 +126,7 @@ figure.floatcenter, .align-center {
 }
 
 #banner h1 {
-    color: #fff;
+    color: #ffffff;
     font-family: "HelveticaNeue-CondensedBold","Helvetica Neue CE 600 Condensed","Helvetica Neue LT Condensed","Helvetica Neue 600 Condensed","HelveticaNeue-BoldCondensed","Helvetica Neue BoldCondensed","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 60px;
     font-stretch: condensed;
@@ -129,22 +137,23 @@ figure.floatcenter, .align-center {
 }
 
 #banner .intro {
-    color: #fff;
+    color: #ffffff;
     font-size: 21px;
     line-height: 1.33;
     opacity: 0.75;
 }
 
-#banner .btn, #banner .intro {
+#banner .btn,
+#banner .intro {
     margin-left: 4px;
 }
 
 /* Solutions for mobile and small screens  */
 @media (max-width: 650px) {
-    #banner h1{
-       font-size: 30px; /* !important;*/
+    #banner h1 {
+        font-size: 30px; /* !important;*/
     }
-    #banner .intro{
+    #banner .intro {
         font-size: 16px;
     }
 }
@@ -162,5 +171,5 @@ i {
 }
 
 main {
-    display: block
+    display: block;
 }
