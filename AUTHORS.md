@@ -1,8 +1,13 @@
-The primary author of this project is:
+This fork is maintained by:
+
+- [Seth Fischer](https://github.com/sethfischer)
+
+The primary author of the original source is:
 
 - [Daan Debie](https://github.com/DandyDev) aka `DandyDev`
 
-And Pelican Bootstrap 3 would not have been possible without the outstanding contributions of the following fine people:
+And DandyDev/pelican-bootstrap3 would not have been possible without the
+outstanding contributions of the following fine people:
 
 - [Magnun Leno](https://github.com/magnunleno) aka `magnunleno`
 - [Hilmar Lapp](https://github.com/hlapp) aka `hlapp`

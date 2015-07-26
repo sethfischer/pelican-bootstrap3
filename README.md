@@ -1,21 +1,83 @@
-# pelican-bootstrap3
+# sethfischer/pelican-bootstrap3
 
-This is a Bootstrap 3 theme for Pelican, compatible with Pelican 3.3.0 and
-higher.
+This is a [Bootstrap 3][1] theme for [Pelican][2], compatible with
+Pelican 3.3.0 and higher. It is a fork of [DandyDev/pelican-bootstrap3][3].
+
+This fork has a longer installation process than the original source so it may
+be worth considering the use of DandyDev/pelican-bootstrap3 in the first
+instance. The key differences are that this fork uses:
+
+  * [SASS][4]
+  * Bootstrap 3 built with [Compass][5] and [bootstrap-sass][6]
+  * [Font Custom][7] to build Font Awesome
+  * [Grunt][8] to automate the above processes
+  * a custom build of jQuery
+  * [webassets][9] to combine and compress assets
+  * [pelican-githubprojects][10] plugin to generate GitHub repository list 
+
+For a summary of the performance benefits gained by using these technologies
+see [Optimising page speed: A case study][11]
 
 
 ## Installation
 
-First:
+### Clone theme repository
 
 ```
-git clone https://github.com/DandyDev/pelican-bootstrap3.git
+$ git clone https://github.com/sethfischer/pelican-bootstrap3.git
 ```
 
-Then:
+### Install dependencies
 
-Point the `THEME` variable in your `pelicanconf.py` to
-`/path/to/pelican-bootstrap3`
+[Install Font Custom][12]. Install [Node.js][13] then run:
+
+```
+$ cd pelican-bootstrap3
+$ npm install
+```
+
+
+### Build
+
+  1. Save a custom jQuery build as `static/js/jquery/jquery-custom.min.js`.
+  2. Build CSS and font with teh command `grunt`.
+
+
+### Site requirements
+
+The following packages must be available to your Pelican installation so should
+be added to your `requirements.txt` file: 
+
+```
+pelican-githubprojects
+webassets
+yuicompressor
+```
+
+Edit `pelicanconf.py` to include the config variables `THEME`, and
+`ASSET_BUNDLES`:
+
+
+```
+# pelicanconf.py
+
+THEME = `/path/to/pelican-bootstrap3`
+
+ASSET_BUNDLES = (
+    ('css_bundle', [
+        'css/bootstrap-custom.css',
+        'css/font-custom.css',
+        'css/sidebar.css',
+        'css/style.css',
+        'lib/pygments/native.css',
+    ], {}),
+    ('js_bundle', [
+        'js/jquery/jquery-custom.min.js',
+        'js/bootstrap/transition.js',
+        'js/bootstrap/collapse.js',
+    ], {}),
+)
+```
 
 
 ## Usage
@@ -30,7 +92,7 @@ This theme honours the following standard Pelican settings:
     * `DISPLAY_CATEGORIES_ON_MENU`
     * `MENUITEMS`
     * `LINKS` (Blogroll will be put in the sidebar instead of the head)
-  * Analytics & Comments
+  * Analytics & Comments:
     * `GOOGLE_ANALYTICS` (classic tracking code)
     * `GOOGLE_ANALYTICS_UNIVERSAL` and `GOOGLE_ANALYTICS_UNIVERSAL_PROPERTY`
       (Universal tracking code)
@@ -39,6 +101,12 @@ This theme honours the following standard Pelican settings:
 
 It uses the `tag_cloud` variable for displaying tags in the sidebar. You can
 control the amount of tags shown with: `TAG_CLOUD_MAX_ITEMS`
+
+
+## CSS and JavaScript assets
+
+To include CSS and JavaScript assets edit the `ASSET_BUNDLES` variable as
+specified in the site requirements above.
 
 
 ## Extras
@@ -66,38 +134,6 @@ keyword `Changelog` of which there may be multiple occurrences. The value for
 ```
 Changelog: 2014-12-17: A description of the change.
 ```
-
-
-### Pygments
-
-You can choose the syntax highlighting style by using the `PYGMENTS_STYLE`
-variable to specify one of the built-in Pygments styles. By default the
-`native` style is used. The following styles are available:
-
-  * autumn
-  * borland
-  * bw
-  * colorful
-  * default
-  * emacs
-  * friendly
-  * fruity
-  * manni
-  * monokai
-  * murphy
-  * native
-  * pastie
-  * perldoc
-  * solarizeddark
-  * solarizedlight
-  * tango
-  * trac
-  * vim
-  * vs
-  * zenburn
-
-For a demo of the different Pygment styles, have a look
-[here](http://pygments.org/demo/218030/)
 
 
 ### Pagination
@@ -138,7 +174,7 @@ If you wish to use the inverse navbar from Bootstrap, set the flag
 `BOOTSTRAP_NAVBAR_INVERSE` to _True_.
 
 
-### Related Posts
+### Related posts
 
 This theme has support for the
 [Related Posts plugin](https://github.com/getpelican/pelican-plugins/tree/master/related_posts).
@@ -187,7 +223,7 @@ two settings are used for this:
     picture (e.g. 'images/profile.png')
 
 
-### Banner Image
+### Banner image
 
 A banner image can be added to the theme, displayed with the `SITENAME` and an
 optional subtitle. Config options are as follows:
@@ -336,7 +372,7 @@ setting `ADDTHIS_PROFILE` to your AddThis profile-id. This will display a
     `ADDTHIS_TWEET`, `ADDTHIS_GOOGLE_PLUSONE`.
 
 
-### Tipue Search
+### Tipue search
 
 This theme has support for the
 [Tipue Search plugin](https://github.com/getpelican/pelican-plugins/tree/master/tipue_search).
@@ -357,5 +393,20 @@ will be shown as well.
 
 ## Live example
 
-  * [seth.fischer.nz](http://seth.fischer.nz)
+  * [seth.fischer.nz](http://seth.fischer.nz/)
+
+
+[1]: http://getbootstrap.com/
+[2]: https://github.com/getpelican/pelican
+[3]: https://github.com/DandyDev/pelican-bootstrap3
+[4]: http://sass-lang.com/
+[5]: http://compass-style.org/
+[6]: https://rubygems.org/gems/bootstrap-sass/
+[7]: http://fontcustom.com/
+[8]: http://gruntjs.com/
+[9]: https://webassets.readthedocs.org/en/latest/
+[10]: https://github.com/kura/pelican-githubprojects
+[11]: http://seth.fischer.nz/optimising-page-speed-case-study.html
+[12]: https://github.com/FontCustom/fontcustom/#installation
+[13]: https://nodejs.org/
 
