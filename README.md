@@ -1,7 +1,7 @@
 # pelican-bootstrap3
 
-This is a Bootstrap 3 theme for Pelican. It's fully responsive.
-Pelican-bootstrap3 is compatible with Pelican 3.3.0 and higher.
+This is a Bootstrap 3 theme for Pelican, compatible with Pelican 3.3.0 and
+higher.
 
 
 ## Installation
@@ -20,7 +20,7 @@ Point the `THEME` variable in your `pelicanconf.py` to
 
 ## Usage
 
-This theme honors the following standard Pelican settings:
+This theme honours the following standard Pelican settings:
 
   * Putting feeds in the `<head>` section:
     * `FEED_ALL_ATOM`
@@ -72,7 +72,7 @@ Changelog: 2014-12-17: A description of the change.
 
 You can choose the syntax highlighting style by using the `PYGMENTS_STYLE`
 variable to specify one of the built-in Pygments styles. By default the
-`native` style is used. The following styles are avaiable:
+`native` style is used. The following styles are available:
 
   * autumn
   * borland
@@ -220,7 +220,8 @@ SOCIAL = (('twitter', 'http://twitter.com/DaanDebie'),
     _True_
   * **Recent Posts** will be shown if `DISPLAY_RECENT_POSTS_ON_SIDEBAR` is set
     to _True_
-    * Use `RECENT_POST_COUNT` to control the amount of recent posts. Defaults to **5**
+    * Use `RECENT_POST_COUNT` to control the amount of recent posts. Defaults
+      to **5**
 
 To remove the sidebar entirely, set `HIDE_SIDEBAR` to _True_.
 
@@ -342,8 +343,8 @@ This theme has support for the
 
 All you have to do, is:
 
-  * enable the plugin, and the theme will add a search box on the right side of
-    the menu
+  * Enable the plugin, and the theme will add a search box on the right side of
+    the menu.
   * Add `DIRECT_TEMPLATES = (('search',))` in your `pelicanconf.py`.
 
 
