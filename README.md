@@ -16,7 +16,7 @@ instance. The key differences are that this fork uses:
   * [pelican-githubprojects][10] plugin to generate GitHub repository list 
 
 For a summary of the performance benefits gained by using these technologies
-see [Optimising page speed: A case study][11]
+see [Optimising page speed: A case study][11].
 
 
 ## Installation
@@ -26,6 +26,7 @@ see [Optimising page speed: A case study][11]
 ```
 $ git clone https://github.com/sethfischer/pelican-bootstrap3.git
 ```
+
 
 ### Install dependencies
 
@@ -40,7 +41,7 @@ $ npm install
 ### Build
 
   1. Save a custom jQuery build as `static/js/jquery/jquery-custom.min.js`.
-  2. Build CSS and font with teh command `grunt`.
+  2. Build CSS and font with the command `grunt`.
 
 
 ### Site requirements
@@ -212,7 +213,7 @@ metadata attribute to the page header (`Menulabel:` in markdown, `:Menulabel:`
 in rst).
 
 
-### About Me
+### About me
 
 You can show a short blurb of text about yourself and a picture. The following
 two settings are used for this:
