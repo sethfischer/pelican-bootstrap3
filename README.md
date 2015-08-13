@@ -114,10 +114,10 @@ specified in the site requirements above.
 
 ### Article info
 
-Set `SHOW_ARTICLE_AUTHOR` to True to show the author of the article at the top
-of the article and in the index of articles. Set `SHOW_ARTICLE_CATEGORY` to
-show the Category of each article. Set `SHOW_DATE_MODIFIED` to True to show the
-article modified date next to the published date.
+Set `SHOW_ARTICLE_AUTHOR` to `True` to show the author of the article at the
+top of the article and in the index of articles. Set `SHOW_ARTICLE_CATEGORY` to
+show the Category of each article. Set `SHOW_DATE_MODIFIED` to `True` to show
+the article modified date next to the published date.
 
 If the source is hosted on GitHub a link to the article history may be included
 at the bottom of each article by setting the `GITHUB_REPO_URL` variable
@@ -148,7 +148,7 @@ but you can optionally use the Boostrap3 _Pager_ by setting `USE_PAGER` to
 ### Bootstrap fluid layout
 
 If you'd like to use the fluid container layout from Bootstrap, set the flag
-`BOOTSTRAP_FLUID` to _True_.
+`BOOTSTRAP_FLUID` to `True`.
 
 
 ### Site Brand
@@ -166,13 +166,13 @@ site name using the `HIDE_SITENAME` flag.
 
 It's possible to show breadcrumbs in your site using the `DISPLAY_BREADCRUMBS`
 flag. By default the article category isn't shown in the breadcrumbs, if you
-wish to enable it, set the `DISPLAY_CATEGORY_IN_BREADCRUMBS` flag to _True_.
+wish to enable it, set the `DISPLAY_CATEGORY_IN_BREADCRUMBS` flag to `True`.
 
 
 ### Navbar
 
 If you wish to use the inverse navbar from Bootstrap, set the flag
-`BOOTSTRAP_NAVBAR_INVERSE` to _True_.
+`BOOTSTRAP_NAVBAR_INVERSE` to `True`.
 
 
 ### Related posts
@@ -198,7 +198,7 @@ For example: `FAVICON = 'images/favicon.png'`
 
 ### Index page
 
-  * If `DISPLAY_ARTICLE_INFO_ON_INDEX` is set to _True_, article info
+  * If `DISPLAY_ARTICLE_INFO_ON_INDEX` is set to `True`, article info
     (date, tags) will be show under the title for each article, otherwise only
     title and summary will be shown (default). 
 
@@ -219,9 +219,9 @@ You can show a short blurb of text about yourself and a picture. The following
 two settings are used for this:
 
   * Your 'About Me' paragraph will be whatever the `ABOUT_ME` variable is set
-    to (raw html is allowed)
+    to (raw html is allowed).
   * Your avatar can be set by pointing the `AVATAR` variable to the relevant
-    picture (e.g. 'images/profile.png')
+    picture (e.g. 'images/profile.png').
 
 
 ### Banner image
@@ -240,7 +240,7 @@ optional subtitle. Config options are as follows:
 The following things can be displayed on the sidebar:
 
   * **Social links** can be provided through the `SOCIAL` variable. If it's
-    empty, the section will not be shown
+    empty, the section will not be shown.
     * In your `pelicanconf.py` provide your social links like this:
 
 ```
@@ -249,26 +249,26 @@ SOCIAL = (('twitter', 'http://twitter.com/DaanDebie'),
           ('github', 'http://github.com/DandyDev'),)
 ```
 
-  * **Tags** will be shown if `DISPLAY_TAGS_ON_SIDEBAR` is set to _True_.
+  * **Tags** will be shown if `DISPLAY_TAGS_ON_SIDEBAR` is set to `True`.
     Normally, tags are shown as a list.
-    * Set `DISPLAY_TAGS_INLINE` to _True_, to display the tags inline (ie. as
-      tagcloud)
+    * Set `DISPLAY_TAGS_INLINE` to `True`, to display the tags inline (ie. as
+      tagcloud).
   * **Categories** will be shown if `DISPLAY_CATEGORIES_ON_SIDEBAR` is set to
-    _True_
+    `True`.
   * **Recent Posts** will be shown if `DISPLAY_RECENT_POSTS_ON_SIDEBAR` is set
-    to _True_
+    to `True`.
     * Use `RECENT_POST_COUNT` to control the amount of recent posts. Defaults
-      to **5**
+      to **5**.
 
-To remove the sidebar entirely, set `HIDE_SIDEBAR` to _True_.
+To remove the sidebar entirely, set `HIDE_SIDEBAR` to `True`.
 
 
 ### reStructuredText styles
 
 If you're using reStructuredText for writing articles and pages, you can
 include the extra CSS styles that are used by the `docutils`-generated HTML by
-setting `DOCUTIL_CSS` to True. This can be done as a global setting or setting
-it in the metadata of a specific article or page.
+setting `DOCUTIL_CSS` to `True`. This can be done as a global setting or
+setting it in the metadata of a specific article or page.
 
 
 ### Disqus comments
@@ -276,16 +276,16 @@ it in the metadata of a specific article or page.
   * This theme sets identifiers for each article's comment threads. If you are
     switching from a theme that doesn't (such as the Pelican built-in default)
     this will result in existing comments getting lost. To prevent this, set
-    `DISQUS_NO_ID` to _True_.
-  * Set `DISQUS_ID_PREFIX_SLUG` to _True_ if you have configured your article
+    `DISQUS_NO_ID` to `True`.
+  * Set `DISQUS_ID_PREFIX_SLUG` to `True` if you have configured your article
     URLs such that the slug alone will likely not be unique. Ignored if
-    `DISQUS_NO_ID` is _True_.
+    `DISQUS_NO_ID` is `True`.
   * You can also enable Disqus comments for pages. This is a per-page setting
     you can control by adding a field `comments` to you pages' metadata. Set it
     to _enabled_ to enable comments for that page. Comment-threads for pages
     will have an id that is prefixed by 'page-'.
   * To show Disqus comment counts on the index page, set `DISQUS_DISPLAY_COUNTS`
-    to _True_.
+    to `True`.
 
 
 ### Content license
@@ -299,7 +299,7 @@ use the following configuration:
   * `CC_LICENSE_COMMERCIAL` - `"yes"` if commercial reuse is permitted, and
     `"no"` otherwise. 
   * Optionally, you can include attribution markup in the license mark by
-    setting `CC_ATTR_MARKUP` to _True_.
+    setting `CC_ATTR_MARKUP` to `True`.
 
 The license choice mirrors the [Creative Commons License Chooser](http://creativecommons.org/choose/).
 Source for the macro that renders the mark is based on 
@@ -322,7 +322,7 @@ using the following variables:
 In order to make the Facebook like button and other social sharing options work
 better, the template contains Open Graph metatags like
 `<meta property="og:type" content="article"/>`. You can disable them by setting
-`USE_OPEN_GRAPH` to _False_. You can use `OPEN_GRAPH_FB_APP_ID` to provide a
+`USE_OPEN_GRAPH` to `False`. You can use `OPEN_GRAPH_FB_APP_ID` to provide a
 Facebook _app id_. You can also provide a default image that will be passed as
 an Open Graph tag  by setting `OPEN_GRAPH_IMAGE` to a relative file path, which
 will be prefixed by your site's base url. Optionally, you can override this
@@ -367,9 +367,9 @@ setting `ADDTHIS_PROFILE` to your AddThis profile-id. This will display a
   * AddThis automatically adds a short hashtag to the end of your URLs. This
     lets you reveal how often visitors copy your URL from their address bar to
     share. Example of URL: `http://domain.com/page.html#UF0983`. This function
-    can be disabled by setting `ADDTHIS_DATA_TRACK_ADDRESSBAR` to _False_.
+    can be disabled by setting `ADDTHIS_DATA_TRACK_ADDRESSBAR` to `False`.
   * All social buttons are enabled by default. You can disable certain button
-    by setting following properties to _False_: `ADDTHIS_FACEBOOK_LIKE`,
+    by setting following properties to `False`: `ADDTHIS_FACEBOOK_LIKE`,
     `ADDTHIS_TWEET`, `ADDTHIS_GOOGLE_PLUSONE`.
 
 
