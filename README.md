@@ -392,11 +392,6 @@ year of the latest post. If a content license mark is enabled (see above), that
 will be shown as well. 
 
 
-## Live example
-
-  * [seth.fischer.nz](http://seth.fischer.nz/)
-
-
 [1]: http://getbootstrap.com/
 [2]: https://github.com/getpelican/pelican
 [3]: https://github.com/DandyDev/pelican-bootstrap3
