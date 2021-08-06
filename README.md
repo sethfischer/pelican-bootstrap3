@@ -1,5 +1,10 @@
 # sethfischer/pelican-bootstrap3
 
+[![Project Status: Unsupported](https://www.repostatus.org/badges/latest/unsupported.svg)](https://www.repostatus.org/#unsupported)
+
+**This project is unsupported.**
+
+
 This is a [Bootstrap 3][1] theme for [Pelican][2], compatible with
 Pelican 3.3.0 and higher. It is a fork of [DandyDev/pelican-bootstrap3][3].
 
